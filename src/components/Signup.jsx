@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import authService from '../appwrite/auth'
 import { Link, useNavigate } from 'react-router-dom'
-import { Button, Input } from './index'
+import { Button, Input ,Logo} from './index'
 import { login } from '../store/authSlice'
-import { UseDispatch, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 
 
@@ -38,10 +38,10 @@ function Signup() {
                 </div>
                 <h2 className=' text-center text-2xl font-bold leading-light'>Already have an account</h2>
                 <p className=' mt-2 text-center text-base text-black/60'>
-                    Already have an account?&nbsp;
-                    <Link to='/signup'
+                    Create new Account?&nbsp;
+                    <Link to='/login'
                         className=' font-medium text-primary transition-all duration-200 hover:underline'>
-                        Sign Up
+                        Login
                     </Link>
                 </p>
                 {error && <p className=' text-red-600 mt-8 text-center'>{error}</p>}
@@ -75,6 +75,7 @@ function Signup() {
                             })}
                         />
                         <Button
+                            className=' w-full text-black bg-slate-500 rounded-full hover:bg-gray-400'
                             type='submit'
                         >
                             Create Account

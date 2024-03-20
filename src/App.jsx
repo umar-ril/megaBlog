@@ -2,7 +2,7 @@ import { Header,Footer } from './components'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth';
-import { login, loguout } from './store/authSlice';
+import { login, logout } from './store/authSlice';
 import { Outlet } from 'react-router-dom';
 
 
@@ -16,7 +16,7 @@ function App() {
       if (userData) {
         dispatch(login({userData}))
       }else{
-        dispatch(dispatch(loguout()))
+        dispatch(dispatch(logout()))
       }
     })
     .finally(()=>{setLoading(false)})
@@ -28,7 +28,7 @@ function App() {
       <div className=' w-full block'>
         <Header />
         <main>
-          {/* <Outlet /> */}
+          <Outlet />
         </main>
         <Footer /> 
       </div>

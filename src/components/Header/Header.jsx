@@ -10,27 +10,27 @@ function Header() {
   const navItems = [
     {
       name: 'Home',
-      slug: "/",
+      slug: "/megaBlog/",
       active: true
     }, 
     {
       name: "Login",
-      slug: "/login",
+      slug: "/megaBlog/login",
       active: !authStatus,
   },
   {
       name: "Signup",
-      slug: "/signup",
+      slug: "/megaBlog/signup",
       active: !authStatus,
   },
   {
       name: "All Posts",
-      slug: "/all-posts",
+      slug: "/megaBlog/all-posts",
       active: authStatus,
   },
   {
       name: "Add Post",
-      slug: "/add-post",
+      slug: "/megaBlog/add-post",
       active: authStatus,
   },
   ]
@@ -40,7 +40,7 @@ function Header() {
       <Container>
         <nav className=' flex'>
           <div className=' mr-4'>
-            <Link to='/'>
+            <Link to='/megaBlog/'>
               <Logo />
             </Link>
           </div>

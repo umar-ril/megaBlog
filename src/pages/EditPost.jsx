@@ -14,7 +14,7 @@ function EditPost() {
                 setPost(post)
             })
         } else {
-            navigate('/')
+            navigate('/megaBlog/')
         }
     }, [slug, navigate])
     return post ? (

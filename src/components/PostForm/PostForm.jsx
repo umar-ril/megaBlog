@@ -29,7 +29,7 @@ function PostForm({ post }) {
 
             const dbPost = await appwriteService.updatePost(post.$id, { featuredImage: file ? file.$id : undefined, ...data })
             if (dbPost) {
-                navigate(`/post/${dbPost.$id}`)
+                navigate(`/megaBlog/post/${dbPost.$id}`)
             }
         }
         else {
@@ -42,7 +42,7 @@ function PostForm({ post }) {
                     userId: userData.$id
                 })
                 if (dbPost) {
-                    navigate(`/post/${dbPost.$id}`)
+                    navigate(`/megaBlog/post/${dbPost.$id}`)
                 }
             }
         }

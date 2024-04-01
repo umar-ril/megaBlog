@@ -5,7 +5,7 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function PostForm({ post }) {
+export default function PostForm({ ...post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -32,7 +32,7 @@ export default function PostForm({ post }) {
             });
 
             if (dbPost) {
-                navigate(`/post/${dbPost.$id}`);
+                navigate(`/mwgaBlog/post/${dbPost.$id}`);
             }
         } else {
             const file = await appwriteService.uploadFile(data.image[0]);
@@ -43,7 +43,7 @@ export default function PostForm({ post }) {
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
 
                 if (dbPost) {
-                    navigate(`/post/${dbPost.$id}`);
+                    navigate(`/megaBlog/post/${dbPost.$id}`);
                 }
             }
         }

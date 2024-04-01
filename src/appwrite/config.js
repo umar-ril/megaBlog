@@ -76,7 +76,7 @@ export class Service {
         }
     }
 
-    async getPosts(queries = [Query.equal('status', ['active'])]) {
+    async getPosts(queries = [Query.equal("status" ,"active")]) {
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
@@ -116,9 +116,9 @@ export class Service {
         }
     }
 
-    getFilePreview(fileId) {
+    async getFilePreview(fileId) {
         try {
-        return this.bucket.getFilePreview(conf.appwriteBucketId,fileId)
+        return await this.bucket.getFilePreview(conf.appwriteBucketId,fileId)
         } catch (error) {
             console.log('Error in get File Preview', error);
         }

@@ -2,8 +2,6 @@ import appwriteService from "../appwrite/config"
 import { Link } from 'react-router-dom'
 
 function PostCard({ $id, title, featuredImage }) {
-  const result = appwriteService.getFilePreview(featuredImage)
-  console.log(result)
   return (
     <Link to={`/megaBlog/post/${$id}`}>
       <div className='w-full bg-gray-100 rounded-lg p-4'>

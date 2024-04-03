@@ -36,7 +36,6 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                   "code",
                   "help",
                   "wordcount",
-                  // Removed duplicate anchor plugin
                 ],
                 toolbar:
                   "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",

@@ -5,7 +5,7 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function PostForm({ ...post }) {
+export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -32,7 +32,7 @@ export default function PostForm({ ...post }) {
             });
 
             if (dbPost) {
-                navigate(`/mwgaBlog/post/${dbPost.$id}`);
+                navigate(`/megaBlog/post/${dbPost.$id}`);
             }
         } else {
             const file = await appwriteService.uploadFile(data.image[0]);
@@ -89,6 +89,7 @@ export default function PostForm({ ...post }) {
                     }}
                 />
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+                {console.log(getValues('content'))}
             </div>
             <div className="w-1/3 px-2">
                 <Input

@@ -8,7 +8,7 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
       <Controller
         name={name || 'content'}
         control={control}
-        render={({feild: onChange}) => {
+        render={({field: {onChange}}) => {
           return (
             <Editor
               apiKey='42yqmns3va6cxupl951wtqp4itt0a3n19iy5jmlbzli3653h'

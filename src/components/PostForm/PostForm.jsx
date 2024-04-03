@@ -19,6 +19,8 @@ export default function PostForm({ post }) {
     const userData = useSelector((state) => state.userData);
 
     const submit = async (data) => {
+        try {
+            
         if (post) {
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
@@ -46,6 +48,10 @@ export default function PostForm({ post }) {
                     navigate(`/megaBlog/post/${dbPost.$id}`);
                 }
             }
+        }
+    
+        } catch (error) {
+            console.log("Error in submit Postform.jsx",error)
         }
     };
 

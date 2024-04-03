@@ -10,18 +10,6 @@ function Home() {
             }
         })
     }, [])
-
-    // if (posts.length === 0) {
-    //     return (
-    //         <div className=" w-full py-8 mt-4 text-center">
-    //             <div className="p-2 w-full">
-    //                 <h1 className="text-2xl font-bold hover:text-gray-500">
-    //                     Login to read Posts
-    //                 </h1>
-    //             </div>
-    //         </div>
-    //     )
-    // }
     return (
         <div className=" w-full py-8"
         >

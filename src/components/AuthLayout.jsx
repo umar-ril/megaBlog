@@ -9,9 +9,9 @@ export default function Protected({children , authentication = true}) {
 
     useEffect(()=>{
       if (authentication && authStatus !== authentication) {
-        navigate('/login')
+        navigate('/megaBlog/login')
       }else if (!authentication && authStatus !== authentication) {
-        navigate('/')
+        navigate('/megaBlog/')
       }
         setLoader(false)
     },[authStatus ,navigate ,authentication])
